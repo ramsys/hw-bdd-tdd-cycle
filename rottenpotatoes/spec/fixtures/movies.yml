@@ -1,0 +1,19 @@
+# spec/fixtures/movies.yml
+milk_movie:
+  id: 1
+  title: Milk
+  rating: R
+  director: Tarantino
+  release_date: 2008-11-26
+
+food_movie:
+  id: 2
+  title: Food, Inc.
+  director: Tarantino
+  release_date: 2008-09-07
+
+feed_movie:
+  id: 3
+  title: Food, Inc. 2
+  director: No Tarantino
+  release_date: 2008-09-07

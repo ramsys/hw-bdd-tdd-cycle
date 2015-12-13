@@ -37,6 +37,19 @@ class MoviesController < ApplicationController
     # default: render 'new' template
   end
 
+  def search_by_director
+    id = params[:id] # retrieve movie ID from URI route
+    @movie = Movie.find(id)
+
+    if @movie.director && @movie.director != ""
+      @movies = Movie.search_by_director(id.to_i)
+    else
+      flash[:message] = "'" + @movie.title + "' has no director info"
+      redirect_to '/'
+    end
+    #@movies = Movie.where(director: "Tarantino")
+  end
+
   def create
     @movie = Movie.create!(movie_params)
     flash[:notice] = "#{@movie.title} was successfully created."
